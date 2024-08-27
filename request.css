@@ -110,3 +110,16 @@ button:hover {
 button:active {
     transform: scale(0.98);
 }
+
+
+.cool-alert {
+    display: none;
+    padding: 15px;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    text-align: center;
+    border-radius: 5px;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
