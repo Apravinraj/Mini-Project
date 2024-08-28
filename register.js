@@ -34,7 +34,7 @@ function submitForm(e) {
 
     // Hide the alert message after 3 seconds
     setTimeout(() => {
-        document.querySelector(".alert").style.display = "none";
+        document.querySelector(".cool-alert").style.display = "none";
     }, 3000);
 
     // Reset the form after submission
