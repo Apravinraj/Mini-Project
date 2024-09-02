@@ -50,32 +50,31 @@ header {
 
 }
 
-
-
-ul{
-    width: 600px;
-    display: flex;
-    flex-wrap: wrap;
+nav ul {
     list-style: none;
-    justify-content: center;
-    justify-content: space-evenly;
-    
-    }
-
-ul li{
-    font-size: 20px;;
+    display: flex;
+    gap: 20px;
+    width: 10px;
 }
-ul li a {
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
 
-ul li a:hover{
-    background-color: FF7381;
-    color: black;
+nav ul li a:hover{
+    background-color: black;
     width: 20px;
 }
+
+ul li a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+    
+}
+
+
 
 .user-account {
     display: flex;
@@ -180,24 +179,17 @@ main {
 button {
     padding: 10px 20px;
     font-size: 18px;
-    border: none;
+    border: 2px solid #FF7381;
+    background-color: #FF7381;
+    color: #fff;
     cursor: pointer;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 .register {
-    background-color: white;
-    
-    border: 1px solid black;
-    
-    
+    background-color: #FF7381;
+    color: #fff;
 }
-.register a{
-    text-decoration: none;
-    color: black;
- 
-}
-
 
 .request {
     background-color: #FF8A92;
@@ -296,8 +288,6 @@ button {
  }
  .text-box h1{
     font-size: 40px;
-    font-style: italic;
- 
  }
  .text-box h1 span{
    color: #ff004c;
@@ -342,23 +332,8 @@ button {
    font-size: 28px;
    color: transparent;
  }
-
- @media (max-width: 1000px) {
-    header {
-      flex-direction: column;
-    }
-    ul {
-        flex-direction: column;
-        align-items: center;
-      }
-    ul li{
-        padding: 10px;
-        
-    }
-    .user-account{
-        flex-direction: column;
-    }
-    .container{
-        height: 150vh;
-    }
-  }
+ .text-box p{
+    
+    font-size: 28px;
+    color: white;
+ }
