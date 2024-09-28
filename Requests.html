@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Requests</title>
+    <link rel="stylesheet" href="Requests.css">
+</head>
+<body>
+    <h1>Incoming Blood Donation Requests</h1>
+    <div class="request-container" id="request-container"></div>
+    <script>
+        const requestContainer = document.getElementById('request-container');
+
+        // Fetch the request data from Google Sheets
+        fetch('https://script.google.com/macros/s/AKfycby9e2zp6g0gLR099_1ANXujD8AqOXJUAyDzilOVp2Y4lCJeeA5zv_dYKGdl93p4ZG-5/exec?sheet=Request')  // Replace with your actual Web App URL
+            .then(response => response.json())
+            .then(data => {
+                const headers = data[0];  // First row contains headers
+                const requests = data.slice(1).map(row => {
+                    let requestObj = {};
+                    headers.forEach((header, index) => {
+                        requestObj[header] = row[index];
+                    });
+                    return requestObj;
+                });
+
+                // Display each request in a card format
+                requests.forEach(request => {
+                    const card = document.createElement('div');
+                    card.className = 'request-card';
+                    card.innerHTML = `
+                        <h3>Requester: ${request.Name || 'N/A'}</h3>
+                        <p><strong>Age:</strong> ${request.Age || 'N/A'}</p>
+                        <p><strong>Blood Group:</strong> ${request['Blood group'] || 'N/A'}</p>
+                        <p><strong>Contact:</strong> ${request['Contact No'] || 'N/A'}</p>
+                        <p><strong>Hospital:</strong> ${request['Hospital Name'] || 'N/A'}</p>
+                        <p><strong>Address:</strong> ${request['Hospital Address'] || 'N/A'}</p>
+                        <p><strong>Required Date:</strong> ${request['Required Date'] || 'N/A'}</p>
+                    `;
+                    requestContainer.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
