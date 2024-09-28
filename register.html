@@ -17,7 +17,7 @@
             </div>
             <div class="form-right">
                 <h1>Volunteer Registration</h1>
-                <form id="volunteerForm">
+                <form action="/register-volunteer" method="POST" id="volunteerForm">
                     <div class="form-group">
                         <label for="name">Full Name:</label>
                         <input type="text" id="name" name="name" required>
@@ -52,17 +52,22 @@
                         <label for="contact">Contact Number:</label>
                         <input type="tel" id="contact" name="contact" required>
                     </div>
+                    <div class="form-group">
+                        <label for="contact">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
                     <button type="submit">Register</button>
                 </form>
                 <div class="cool-alert" style="display:none;">
                     🚑 Blood Request Submitted! We'll get in touch with you shortly. 🚑
-                </div>            </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="register.js"></script>
 </body>
 </html>
