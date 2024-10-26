@@ -27,19 +27,23 @@
 
                 // Display each request in a card format
                 requests.forEach(request => {
-                    const card = document.createElement('div');
-                    card.className = 'request-card';
-                    card.innerHTML = `
-                        <h3>Requester: ${request.Name || 'N/A'}</h3>
-                        <p><strong>Age:</strong> ${request.Age || 'N/A'}</p>
-                        <p><strong>Blood Group:</strong> ${request['Blood group'] || 'N/A'}</p>
-                        <p><strong>Contact:</strong> ${request['contact no'] || 'N/A'}</p>
-                        <p><strong>Hospital:</strong> ${request['Hospital Name'] || 'N/A'}</p>
-                        <p><strong>Address:</strong> ${request['Hospital Address'] || 'N/A'}</p>
-                        <p><strong>Required Date:</strong> ${request['Required Date'] || 'N/A'}</p>
-                    `;
-                    requestContainer.appendChild(card);
-                });
+    const card = document.createElement('div');
+    card.className = 'request-card';
+
+    const contactNumber = request['contact no'] ? String(request['contact no']) : 'N/A';
+
+    card.innerHTML = `
+        <h3>Requester: ${request.Name || 'N/A'}</h3>
+        <p><strong>Age:</strong> ${request.Age || 'N/A'}</p>
+        <p><strong>Blood Group:</strong> ${request['Blood group'] || 'N/A'}</p>
+        <p><strong>Contact:</strong> ${contactNumber}</p>
+        <p><strong>Hospital:</strong> ${request['Hospital Name'] || 'N/A'}</p>
+        <p><strong>Address:</strong> ${request['Hospital Address'] || 'N/A'}</p>
+        <p><strong>Required Date:</strong> ${request['Required Date'] || 'N/A'}</p>
+    `;
+    requestContainer.appendChild(card);
+});
+
             })
             .catch(error => console.error('Error fetching data:', error));
     </script>
