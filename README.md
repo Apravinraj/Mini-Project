@@ -30,6 +30,9 @@ This project addresses the growing challenge of deepfake detection in digital me
 #### Output2 - Google Sheet Database:
 ![image](https://github.com/user-attachments/assets/ad271d49-2fa2-4917-b910-6e98187f67fa)
 
+### Output3 - Email Alert:
+![image](https://github.com/user-attachments/assets/ad9c3220-2815-407e-be2c-887135f11a49)
+
 ## Results and Impact
 This project revolutionizes blood donation coordination by introducing a real-time, interactive platform that bridges the gap between donors and recipients. The system integrates dynamic dashboards with automated data updates, displaying volunteer information and urgent blood donation requests seamlessly. By leveraging Google Sheets for data synchronization and modern web technologies for user interaction, the platform enhances operational efficiency and responsiveness. This innovation ensures timely fulfillment of blood donation needs, supporting healthcare systems and saving lives in critical situations.
 
